@@ -1,0 +1,45 @@
+.pop-mod-dialog {
+   width: 400px;
+   margin: 70px auto;
+  }
+  .pop-mod-content{
+   border-radius: 0;
+  }
+  .modal-body{
+   border: 0;
+  }
+  .pop-mod-footer{
+   border-top: none;
+   text-align: center !important;
+  }
+  .frm-left{
+   padding-left:0;
+   padding-right:0;
+   
+  }   
+  .frm-right{
+   padding-right:0;
+   padding-left:0;
+  }
+  .modal-title{
+   text-align:center;
+  }
+  .btn-sub{
+   width: 100%;
+   background: #FFBA00;
+   color: #000;
+   border-radius: 0;
+  }
+  .terms-condition{
+   font-weight: 400;
+   color: #000;
+   text-align: center !important;
+  }
+
+  a.dropdown-item.ng-star-inserted {
+    margin-left: 10% !important;
+  }
+
+  .col-md-5.frm-left {
+    float: right !important;
+  }

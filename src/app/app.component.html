@@ -1,0 +1,270 @@
+    <nav class="navbar navbar-default " id="myarea" *ngIf="removeHeader() == true">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="assets/img/logo1.png" alt="" style="margin-top: -24px;"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse yamm" id="navigation">
+                    <div class="button navbar-right">
+                        <button class="navbar-btn nav-button wow fadeInRight"  onclick=" window.open('postproperty')" data-wow-delay="0.48s"><b>+ Post Property</b></button>
+                    </div>
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                            <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Agents <b class="caret"></b></a>
+                            <ul class="dropdown-menu navbar-nav">
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                            <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Builders <b class="caret"></b></a>
+                            <ul class="dropdown-menu navbar-nav">
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                            <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Buy <b class="caret"></b></a>
+                            <ul class="dropdown-menu navbar-nav">
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="i#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                            <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Rent <b class="caret"></b></a>
+                            <ul class="dropdown-menu navbar-nav">
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                            <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">What's New <b class="caret"></b></a>
+                            <ul class="dropdown-menu navbar-nav">
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+                                <li>
+                                    <a href="#">demo</a>
+                                </li>
+                                <li>
+                                   <a href="#">demo</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown ymm-sw " data-wow-delay="0.1s" style="border: 1px solid">
+                            <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">My RisingProp <b class="caret"></b></a>
+                            <ul class="dropdown-menu navbar-nav">
+                                <li>
+                                   <a href="login">Login</a>
+                                </li>
+                                <li>
+                                   <a href="sign_up">Sign Up</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+    <div>
+    <!-- This is place holder -->
+    <!-- <app-propertyform></app-propertyform> -->
+    <router-outlet></router-outlet>
+    </div>
+    <footer *ngIf="removeHeader() == true">
+        <div class="footer-area">
+            <div class=" footer">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                            <div class="single-footer">
+                                <h4>About us </h4>
+                                <div class="footer-title-line"></div>
+                                  <b>Rising Prop</b>
+
+                                <p>Lorem ipsum dolor cum necessitatibus su quisquam molestias. Vel unde, blanditiis.</p>
+                                <ul class="footer-adress">
+                                    <li><i class="pe-7s-map-marker strong"> </i> 9089 your adress her</li>
+                                    <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>
+                                    <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                            <div class="single-footer">
+                                <h4>Quick links </h4>
+                                <div class="footer-title-line"></div>
+                                <ul class="footer-menu">
+                                    <li><a href="">Properties</a>  </li>
+                                    <li><a href="#">Services</a>  </li>
+                                    <li><a href="">Submit property </a></li>
+                                    <li><a href="">Contact us</a></li>
+                                    <li><a href="">faq</a>  </li>
+                                    <li><a href="">Terms </a>  </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                            <div class="single-footer">
+                                <h4>Last News</h4>
+                                <div class="footer-title-line"></div>
+                                <ul class="footer-blog">
+                                    <li>
+                                        <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                                            <a href="">
+                                                <img src="assets/img/demo/small-proerty-2.jpg">
+                                            </a>
+                                            <span class="blg-date">12-12-2016</span>
+
+                                        </div>
+                                        <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
+                                            <h6> <a href="">Add news functions </a></h6>
+
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                                            <a href="">
+                                                <img src="assets/img/demo/small-proerty-2.jpg">
+                                            </a>
+                                            <span class="blg-date">12-12-2016</span>
+
+                                        </div>
+                                        <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
+                                            <h6> <a href="">Add news functions </a></h6>
+
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                                            <a href="">
+                                                <img src="assets/img/demo/small-proerty-2.jpg">
+                                            </a>
+                                            <span class="blg-date">12-12-2016</span>
+
+                                        </div>
+                                        <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
+                                            <h6> <a href="">Add news functions </a></h6>
+
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                            <div class="single-footer news-letter">
+                                <h4>Stay in touch</h4>
+                                <div class="footer-title-line"></div>
+                                <p>Lorem ipsum dolor sit amet, nulla  suscipit similique quisquam molestias. Vel unde, blanditiis.</p>
+
+                                <form>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text" placeholder="E-mail ... ">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary subscribe" type="button"><i class="pe-7s-paper-plane pe-2x"></i></button>
+                                        </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                </form>
+
+                                <div class="social pull-right">
+                                    <ul>
+                                        <li><a class="wow fadeInUp animated" href="https://twitter.com/kimarotec"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://www.facebook.com/kimarotec" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://plus.google.com/kimarotec" data-wow-delay="0.3s"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://instagram.com/kimarotec" data-wow-delay="0.4s"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://instagram.com/kimarotec" data-wow-delay="0.6s"><i class="fa fa-dribbble"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copy text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="pull-left">
+                            <span class="f"  > © <a href="http://www.KimaroTec.com" >Rising Property</a> , All rights reserved 2018  </span>
+                        </div>
+                        <div class="bottom-menu pull-right">
+                            <ul>
+                                <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.2s">Home</a></li>
+                                <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.3s">Property</a></li>
+                                <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.4s">Faq</a></li>
+                                <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.6s">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

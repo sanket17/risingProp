@@ -1,0 +1,494 @@
+<!-- <div class="container text-center" *ngFor="let prop of property" class="prop-d">  
+  <img class="p-img" src="{{ (prop?.imagedata | getjsonobject)? (prop?.imagedata | getjsonobject)[0].value : 'assets/img/slide1/slider-image-1.jpg'}}" width="100%" height="100%" >  
+</div> -->
+
+        <div class="page-head"> 
+            <div class="container">
+                <div class="row">
+                    <div class="page-head-content">
+                        <h1 class="page-title">Property Details</h1>               
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End page header -->
+        <toaster-container [toasterconfig]="config1"></toaster-container>       
+ <!-- property area -->
+        <div class="content-area single-property" style="background-color: #F4F4F4">
+            <div class="container">
+                   
+                <div class="clearfix padding-top-40">
+                   
+                            <div class="col-md-12 prop-price" >
+                            <div class="col-md-8" >
+                                 <div class="col-md-3" >
+                                 <p style="font-size: 30px"><strong><i class="fa fa-rupee-sign" style="color: #353535"></i>₹ {{priceText}} </strong></p>
+                                 </div>
+                                   <div class="col-md-9" >
+                                    <p><b>{{property[0]?.property_features?.bedrooms}} BHK Flat </b></p>
+                                    <p>{{property[0]?.location?.name_of_society}}, {{property[0]?.location?.locality}}, {{property[0]?.location?.city}} <span><i class="fa fa-rupee-sign" style="color: #353535"></i> What's Nearby</span></p>
+                                   </div>
+                               </div>
+
+                              <div class="col-md-4 owner-info" style="background:#F4F4F4;border-radius: 5px;padding: 10px">
+                                <div class="col-md-6">
+                                <p>Owner</p>
+                                <p> {{property[0]?.users?.name}} </p>
+                                </div>
+                                 <div class="col-md-6">
+                                <p><b>Contact Now</b></p>
+                              
+                                </div>
+
+                              </div>
+
+                            </div>
+                       
+                       
+                    <div class="col-md-12 prop-detiils " >
+                        <h4 class="s-property-title" >Property Details </h4>
+                         <div class="col-md-4">
+                             <img src="data:image/png;base64,{{property[0]?.property_images[0]?.photo}}" class="img-responsive" style="width: 318px;height: 170px"><br>
+                               <img src="data:image/png;base64,{{property[0]?.property_images[0]?.photo}}" class="img-responsive" style="width: 318px;height: 110px">
+                         </div>
+                       <div class="col-md-8">
+                        <div class="single-property-wrapper">
+                           
+                        
+                            <div class="property-meta entry-meta clearfix ">   
+                                <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                  
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Bedrooms </span>
+                                        <span class="property-info-value">{{property[0]?.property_features?.bedrooms}}</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Bathrooms </span>
+                                        <span class="property-info-value">{{property[0]?.property_features?.bathrooms}}</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Super area</span>
+                                        <span class="property-info-value">{{property[0]?.area?.covered_area}} sqft</span>
+                                        <!-- <span class="property-info-value" style="font-size: 14px">₹ {{property[0]?.price_details?.price_per_square_feet}}/sqft</span> -->
+                                    </span>
+                                </div>
+                             </div>
+                             <hr>
+                                    
+                                <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-5 p-b-15">
+                                    
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Society</span>
+                                        <span class="property-info-value">{{property[0]?.location?.name_of_society}} </span>
+                                    </span>
+                                </div>
+
+                                
+                            </div>
+                              <hr>
+
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Status</span>
+                                        <span class="property-info-value">{{property[0]?.transaction_type?.possession_status}} </span>
+                                    </span>
+                                </div>
+                                 <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Transaction type</span>
+                                        <span class="property-info-value">{{property[0]?.transaction_type?.transaction_type}} </span>
+                                    </span>
+                                </div>
+                                 <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Floor</span>
+                                        <span class="property-info-value">{{property[0]?.property_features?.floor_no}} (Out of {{property[0]?.property_features?.total_floor}} Floors) </span>
+                                    </span>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Car parking</span>
+                                        <span class="property-info-value">{{property[0]?.additional_feature?.covered_car_parking}} Covered</span>
+                                    </span>
+                                </div>  
+                            </div>
+                            
+
+                             
+                              <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                   <button type="button" class="btn btn-danger" style="background: #EF333C;color: #fff" (click)="scroll(get_detail)" >Contact Owner</button>
+                                </div>
+                                 <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                   <button type="button" class="btn btn-danger">Get Phone No.</button>
+                                </div>
+               
+                            </div>
+
+                            </div> 
+                             </div>
+                         </div> 
+                     </div>
+                   
+
+                       
+                             <div class="col-md-12 prop-detiils ">
+                                <h4 class="s-property-title" >Disclaimer </h4>
+                                <div class="s-property-content">
+                                    <p>RisingProp endeavours to display on its platform(s), relevant information relating to a particular Property/Project for general informational purpose, including Property/project details, listings, floor area, location, maps etc. The details so published are based on collection of information and data from multiple sources on best effort basis and should not be deemed to constitute advertisements, solicitations, marketing, offer for sale, invitation to offer, invitation to acquire, by the developer/builder or any other entity. The imagery used herein may not represent actuals or may be indicative of style only. No information given creates a warranty or expands the scope of any warranty that cannot be disclaimed under applicable law.   <details>
+  <summary><b>Read More...</b></summary><p>
+    RisingProp is not responsible for any loss or damage including, without limitation, indirect or consequential loss or damage, suffered by anyone due to use of or reliance on the content(s) of this site/App without independently verifying with the concerned developer/builder. Anyone using this site/app or relying on the content(s) therein is doing so at his/her/it's sole risk and consequences without any recourse to RisingProp.
+    RisingProp reserves the right to revoke, modify, alter, add and delete any one or more of the information without any notification.
+    </p>
+</details>                            
+                                </div>
+                            </div>
+                            <!-- End description area  -->
+
+
+                        <div class="col-md-12  disclaimer">
+                            <h4 class="s-property-title" >Description</h4>
+                         <div class="col-md-9">
+                          <p>{{property[0]?.intersting_property_details}}. </p>
+                            <!-- <p>The Value for the Home is fixed at {{property[0]?.price_details?.monthly_total_rent}} Lac. This one is a {{property[0]?.property_features?.bedrooms}} bedroom apartment located in {{property[0]?.location?.name_of_society}}, {{property[0]?.location?.locality}}. It lies on {{property[0]?.property_features?.floor_no}} level from {{property[0]?.property_features?.total_floor}} floors and is also airy and spacious. It has {{property[0]?.area?.covered_area}} Sq-ft area for use. </p> -->
+                             <ul class="additional-details-list clearfix">
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Price Breakup </span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">₹ {{priceText}} Base price </span>
+                                    </li>
+
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Address</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">{{property[0]?.landmarks_neighbourhood}}, {{property[0]?.location?.locality}}, {{property[0]?.location?.city}}  </span>
+                                    </li>
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Landmarks</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">{{property[0]?.landmarks_neighbourhood}}</span>
+                                    </li>
+
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Overlooking</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">{{property[0]?.intersting_property_details}}</span>
+                                    </li>
+
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Flooring</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">
+                                          <span *ngIf="property[0]?.flooring?.ceramic_tiles == 1">
+                                              Ceramic Tiles                                          
+                                          </span>
+                                          <span *ngIf="property[0]?.flooring?.Granite == 1">
+                                              , Granite                                          
+                                          </span>
+                                          <span *ngIf="property[0]?.flooring?.marble == 1">
+                                              , Marble                                          
+                                          </span>
+                                          <span *ngIf="property[0]?.flooring?.marbonite == 1">
+                                              , Marbonite                                          
+                                          </span>
+                                          <span *ngIf="property[0]?.flooring?.mosiac == 1">
+                                              , Mosaic                                          
+                                          </span>
+                                          <span *ngIf="property[0]?.flooring?.normal_tiles == 1">
+                                              , Normal Tiles/Kotah Stone                                          
+                                          </span>
+                                          <span *ngIf="property[0]?.flooring?.vitrified == 1">
+                                              , Vitrified                                          
+                                          </span>
+                                          <span *ngIf="property[0]?.flooring?.wooden == 1">
+                                              , Wooden                                          
+                                          </span>
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Water Availability</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry" *ngIf="property[0]?.water_availability == 1">24 Hours Available</span>
+                                    </li> 
+
+                                      <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Status of Electricity</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry" *ngIf="property[0]?.electricity_availability == 1">No/Rare Powercut</span>
+                                    </li>
+
+                                      <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Lift</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry" >{{property[0]?.additional_feature?.no_of_lifts}}</span>
+                                    </li>
+
+
+                                      <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Units Available</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">{{property[0]?.additional_feature?.flats_on_floor}}</span>
+                                    </li>
+
+
+                                      <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Furnishing</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">{{property[0]?.property_features?.furnished_status}}</span>
+                                    </li>
+
+
+                                      <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Authority Approval</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-9 add-d-entry">Pimpri-Chinchwad New Town Development Authority</span>
+                                    </li>
+
+                                     <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-3 add-d-title">Amenities</span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.laundry_service == 1">Laundry Service </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.visitor_parking == 1">Visitor Parking </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.waste_disposal == 1">Waste Disposal </span>
+
+                                        <!-- <span class="col-xs-6 col-sm-4 col-md-3 add-d-title"></span> -->
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.rain_water_harvesting == 1">Rain Water Harvesting </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.water_storage == 1">Water Storage </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.air_condition == 1">Air Conditioned </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.banquet_hal == 1">Banquet Hall </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.bar_or_lounge == 1">Bar/Longue </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.cafeteria == 1">Cafeteria/Food court </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.club_house == 1">Club House </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.confrence_room == 1">Conference Room </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.dth_television_facility == 1">DTH TV Facility </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.gymnasium == 1">Gymnasium </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.intercom_facility == 1">Intercom Facility </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.internet == 1">Internet/Wifi connectivity </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.jogging_track == 1">Jogging and Strolling Track </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.lift == 1">Lift </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.manintenance_staff == 1">Maintenance Staff </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.outdoor_tennis_court == 1">Outdoor Tennis Courts </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.park == 1">Park </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.piped_gass == 1">Piped Gas </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.power_back_up == 1">Power Back Up </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.private_terrace_garden == 1">Private Terrace/Garden </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.ro_system == 1">RO Water System </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.reserved_parking == 1">Reserved Parking </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.security == 1">Security </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.service_goods_lift == 1">Service/Goods Lift </span>
+
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.swimming_pool == 1">Swimming Pool </span>
+                                          <span class="col-xs-6 col-sm-8 col-md-3 add-d-entry" *ngIf="property[0]?.amenities?.vaastu_compliant == 1">Vaastu Complaint </span>
+                                        
+                                        
+                                    </li>
+
+                                </ul>
+                                <hr>
+
+                                <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                                    
+                                   <button type="button" class="btn btn-danger" style="background: #EF333C;color: #fff" (click)="scroll(get_detail)">Contact Owner</button>
+                                </div>
+                                 
+               
+                            </div>
+                         </div>
+<!-- Start otp code -->
+
+                       <div class="col-md-3" style="background:#F5EEEE;padding-bottom: 30px;padding-top: 20px">
+                            <form name="postprop" #f="ngForm" (ngSubmit)="submit(f) " novalidate>
+                        <div class="single-property-wrapper" #get_detail>
+                            <div class="row" >
+                                  
+
+                                 <div class="col-md-9">
+                               <p><b>owner</b></p>
+                              <p>{{property[0]?.users?.name}} </p>
+                               <p>+91 -{{hiddenMobileNo}}  </p>
+                            </div>
+                        </div><hr>
+                             <p><b>Get more Details </b></p>
+                             <div class="form-group" id="user_info">
+                                    <label class="required">I am</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" class="iradio_square-yellow" name="rdoUserInfo" [(ngModel)]="FormDataComponent.enquiry_details.user.user_type" #userInfoType="ngModel" value="1"
+                                         checked required>
+                                        <span> Individual</span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" class="iradio_square-yellow" name="rdoUserInfo" [(ngModel)]="FormDataComponent.enquiry_details.user.user_type" #userInfoType="ngModel" value="2"
+                                         checked required> Agent
+                                    </label>
+                                    <div *ngIf="(submitted ) && (!userInfoType.valid)">
+                                            <span class="alert alert-danger" *ngIf="(submitted ) && (!userInfoType.valid)"><span class="formErrArrow"></span>Please enter the user info.</span>
+                                        </div>
+                                              
+
+                                        </div>
+
+                                        <div class="form-group slidingDiv" id="show_hide">
+                           
+                                <label>Name
+                                    <span class='red'>*</span>
+                                </label>
+                                <input type="text" placeholder="Enter Your Name" class="form-control" [(ngModel)]="FormDataComponent.enquiry_details.user.name" #userName="ngModel" pattern="[a-zA-Z ]*"
+                                 required name="rdoUserName" />
+                                <div *ngIf="(submitted ) && (!userName.valid)">
+                                    <span class="alert alert-danger" *ngIf="(submitted ) && (!userName.valid)">Your name is required.</span>
+                                    <span class="alert alert-danger" *ngIf="submitted  && (userName.errors.pattern)">Invalid name.</span>
+                                </div>
+
+                        </div>
+
+                        <div class="form-group slidingDiv" id="show_hide">
+                                <label>Mobile
+                                        <span class='red'>*</span>
+                                    </label>
+                                    <input type="text" (keydown)="numberOnly($event)" [(ngModel)]="FormDataComponent.enquiry_details.user.mobile" (keydown)="numberOnly($event) " #mobileNumber="ngModel" maxlength="10" required name="mobile"
+                                    id="mobile" placeholder="Enter Your Mobile Number  " pattern="[0-9]{10}" class="form-control">
+
+                                   <div *ngIf="(submitted ) && (!mobileNumber.valid)">
+                                       <span class="alert alert-danger" *ngIf="(submitted ) && (!mobileNumber.valid)">Mobile number is required.</span>
+                                       <span class="alert alert-danger" *ngIf="submitted  && (mobileNumber.errors) && (mobileNumber.errors.pattern)">Invalid mobile number.</span>
+                                   </div>
+                        </div>
+
+                        <div class="form-group slidingDiv" id="show_hide">
+                                <label>Email
+                                        <span class='red'>*</span>
+                                    </label>
+                                    <input type="text" [(ngModel)]="FormDataComponent.enquiry_details.user.email" #emailAddress="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                                     name="email" id="email" placeholder="Enter Your Email " class="form-control">
+                                    <div *ngIf="(submitted ) && (!emailAddress.valid)">
+                                        <span class="alert alert-danger" *ngIf="(submitted ) && (!emailAddress.valid)">Email is required.</span>
+                                        <span class="alert alert-danger" *ngIf="submitted  && (emailAddress.errors) && (emailAddress.errors.pattern)">Invalid email.</span>
+                                    </div>
+                        </div>
+                        <div  *ngIf="otp_show">
+                                <div class="form-group slidingDiv" >
+                                  <label>OTP</label>
+                                  <input type="text" placeholder="Enter OTP" class="form-control"
+                                  [(ngModel)]="FormDataComponent.enquiry_details.otp" #otp="ngModel"  required name="rdootp"   />
+                                  <div
+                                  *ngIf="(submitted ) && (!otp.valid)">
+                                    <span class="alert alert-danger" *ngIf="(submitted ) && (!otp.valid)">OTP is required.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                         
+
+                        <div class="btn-group">
+                            <label>Interested in</label>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Interested in (optional)</button>
+            <ul class="dropdown-menu" style="padding: 10px">
+               
+               <li>
+                   <label class="dropdown-menu-item checkbox">
+                       <input type="checkbox" (change)="onInterestChange($event.target.value)" name="property_details_site_visit" [(ngModel)]="property_details_site_visit" value="Site Visit" />                     
+                       Site Visit
+                   </label>
+               </li>
+               <li>
+                   <label class="dropdown-menu-item checkbox">
+                       <input type="checkbox" (change)="onInterestChange($event.target.value)" name="property_details_immediate_purchase" [(ngModel)]="property_details_immediate_purchase" value=" Immediate Purchase" />                    
+                       Immediate Purchase
+                   </label>
+               </li>
+               <li>
+                   <label class="dropdown-menu-item checkbox">
+                       <input type="checkbox" (change)="onInterestChange($event.target.value)" name="property_details_site_home_loan"  [(ngModel)]="property_details_site_home_loan" value=" Home Loan" />                  
+                       Home Loan
+                   </label>
+               </li> 
+                             
+                
+            </ul>
+         </div>
+         <div class="row">
+        <div  class="col-lg-12  col-sm-12  col-md-12 col-xs-12 ">
+                <input type="submit" id="generate_otp"  class="left-margin-btn" value="Generate OTP"   (click)="generate_otp_btn = true" />
+        </div>
+        <div class="col-lg-12  col-sm-12  col-md-12 col-xs-12 ">
+                <input type="submit" id="validate_otp" class="left-margin-enquiry-btn" style="margin-top:5%" value="Validate OTP"  (click)="validate_otp_btn = true"  />
+        </div>
+        <div class="col-lg-12  col-sm-12  col-md-12 col-xs-12 ">
+                <input type="submit" value="Enquiry Now" class="left-margin-enquiry-btn" style="background: #353535;color: #fff;margin-top: 5%" />
+         </div>
+        
+        
+
+          
+        </div>
+                             </div>
+                        </form>
+ </div> 
+
+        <!-- END otp code -->
+
+        
+
+
+                     </div>
+                   
+
+
+
+
+<div class="col-md-12  disclaimer">
+                            <h4 class="s-property-title" >Project Details</h4>
+                            <div class="row">
+                         <div class="col-md-12">
+                            <div class="col-md-3">
+                            <img src="data:image/png;base64,{{property[0]?.property_images[0]?.photo}}">
+                            </div>
+                            <div class="col-md-8">
+                            <p style="font-size: 25px"><b>{{property[0]?.location?.name_of_society}} </b></p>
+                            
+                        </div>
+                    </div>
+                </div>
+                    <hr>
+                             <div class="col-md-12">
+                                 <div class="col-md-3">
+                                     <p><b>Price</b></p>
+                                     <p>₹ {{priceText}}  </p>
+                                     <p style="padding: 0px 0px 2px;">₹ {{property[0]?.price_details?.price_per_square_feet}} per sqft  </p>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <p><b>Configuration</b></p>
+                                     <p>{{property[0]?.property_features?.bedrooms}} BHK </p>
+                                     
+                                 </div>
+                                
+                                 <div class="col-md-2">
+                                     <p><b>Status</b></p>
+                                     <p>{{property[0]?.transaction_type?.possession_status}}  </p>
+                                     
+                                 </div>
+                                 
+                             </div>
+
+                         </div>
+                     </div>
+
+                             
+                            </div>  
+                          </div>
